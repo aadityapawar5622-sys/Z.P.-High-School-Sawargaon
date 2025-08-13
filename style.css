@@ -840,8 +840,7 @@ body {
   }
 }
 
-/* Responsive for mobile */
-
+/* Responsive for tablets */
 @media (max-width: 900px) {
   .right-side-content {
     align-items: center;
@@ -849,55 +848,68 @@ body {
     max-width: 100%;
   }
 
-  .pie-chart-container, .summary {
-    max-width: 100%;
-    margin: 0;
-  }
-
+  .pie-chart-container, 
+  .summary, 
   .additional-image {
     max-width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .summary table {
+    margin: auto;
   }
 }
 
+/* Responsive for mobile phones */
 @media (max-width: 720px) {
   .summary thead {
-    display: none;
+    display: none; /* Hide table headers */
   }
 
-  .summary,
-  .summary tbody,
-  .summary tr,
+  .summary, 
+  .summary tbody, 
+  .summary tr, 
   .summary td {
     display: block;
     width: 100%;
+    text-align: center;
   }
 
   .summary tr {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     box-shadow: 0 3px 10px rgba(125, 211, 252, 0.15);
     border-radius: 12px;
-    padding: 18px 20px;
+    padding: 15px;
     background: rgba(10, 18, 30, 0.9);
-    transform: none !important;
   }
 
   .summary td {
-    padding-left: 50%;
-    position: relative;
-    text-align: left;
     border: none;
+    padding: 8px;
+    position: relative;
+    text-align: center; /* Center content */
   }
 
+  /* Labels before each cell */
   .summary td::before {
     content: attr(data-label);
-    position: absolute;
-    left: 20px;
+    display: block;
     font-weight: 700;
     color: #7dd3fc;
-    white-space: nowrap;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  /* Additional image centers */
+  .additional-image {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
   }
 }
-
 
 
 /*-----------courses----------*/
@@ -1563,3 +1575,4 @@ padding: 80px 0;
     border-radius: 0;
   }
 }
+
