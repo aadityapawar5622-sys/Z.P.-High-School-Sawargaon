@@ -897,11 +897,6 @@ body {
   background-color: #f44336;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f4f8;
-  text-align: center;
-}
 
 /* -----------Pie chart--------- */
 .pie-chart-container {
@@ -967,17 +962,7 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Right side container for pie chart and summary */
 
-.right-side-content {
-  margin-top: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 650px;
-  margin-left: auto;
-}
 
 /* Summary Table Styles */
 
@@ -1052,11 +1037,7 @@ body {
   }
 }
 /*---------------Vision & Mission--------*/
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  margin: 0;
-}
+
 
 .container {
   display: flex;
@@ -1270,171 +1251,89 @@ body {
   color: #2e7d32;
 }
 
+/* Responsive adjustments for mobile devices */
+@media screen and (max-width: 768px) {
 
-/* Mobile Card View */
-@media (max-width: 600px) {
-  .infra-table,
-  .infra-table thead,
-  .infra-table tbody,
-  .infra-table th,
-  .infra-table td,
-  .infra-table tr {
-    display: block;
-    width: 100%;
+  /* Sub-header */
+  .sub-header {
+    height: 60vh;
+    padding: 20px;
   }
-
-  .infra-table thead {
-    display: none; /* Hide headers on mobile */
-  }
-
-  .infra-table tr {
-    margin-bottom: 15px;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  .infra-table td {
-    text-align: left;
-    padding: 10px 15px;
-    position: relative;
-  }
-
-  .infra-table td::before {
-    content: attr(data-label); /* Show column name */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: #4CAF50;
-  }
-}
-
-
-/* Responsive for mobile phones */
-@media (max-width: 720px) {
-  .summary thead {
-    display: none; /* Hide table headers */
-  }
-
-  .summary, 
-  .summary tbody, 
-  .summary tr, 
-  .summary td {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .summary tr {
-    margin-bottom: 15px;
-    box-shadow: 0 3px 10px rgba(125, 211, 252, 0.15);
-    border-radius: 12px;
-    padding: 15px;
-    background: rgba(10, 18, 30, 0.9);
-  }
-
-  .summary td {
-    border: none;
-    padding: 8px;
-    position: relative;
-    text-align: center; /* Center content */
-  }
-
-  /* Labels before each cell */
-  .summary td::before {
-    content: attr(data-label);
-    display: block;
-    font-weight: 700;
-    color: #7dd3fc;
-    margin-bottom: 4px;
-    text-align: center;
-  }
-
-  /* Additional image centers */
-  .additional-image {
-    display: block;
-    margin: 20px auto;
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
-  }
-  /* 📱 Mobile Responsive Styles */
-@media (max-width: 720px) {
-
-  /* Sub-header text */
   .sub-header h3 {
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: 20px;
-    padding: 0 10px;
   }
 
-  /* About section layout */
+  /* About Us Section */
   .about-us {
     width: 95%;
     padding: 20px 0;
+    text-align: center;
   }
-
   .about-col {
     flex-basis: 100%;
     padding: 10px;
-    text-align: center;
   }
-
-  /* First image */
-  .about-col img.main-image {
+  .about-col img.main-image,
+  .about-col img.additional-image {
     width: 100%;
+    height: auto;
     margin-bottom: 20px;
   }
 
-  /* Additional image */
-  .additional-image-container {
-    margin-top: 20px;
-  }
-
-  .additional-image {
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  /* Pie chart */
+  /* Pie Chart */
   .pie-chart-container {
     margin: 20px auto;
-    width: 100%;
-    max-width: 280px;
+    max-width: 250px;
     text-align: center;
   }
-
   .pie-chart {
     width: 200px;
     height: 200px;
     margin: 0 auto;
   }
 
-  /* Right side content (chart + summary) stacks vertically */
-  .right-side-content {
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 95%;
-    gap: 20px;
-  }
-
-  /* Summary table → already responsive (you added that) */
+  /* Summary Table */
   .summary {
-    font-size: 14px;
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .summary td {
     font-size: 13px;
+    display: block;
+    overflow-x: auto; /* Scroll horizontally if table too wide */
+    white-space: nowrap;
+  }
+  .summary td, .summary th {
     padding: 10px;
   }
+
+  /* Vision & Mission container */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Infrastructure Table */
+  .infra-table {
+    font-size: 14px;
+    min-width: unset;
+  }
+
+  /* Core Values */
+  .values-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .value-box {
+    width: 90%;
+    max-width: 300px;
+  }
 }
 
-}
+
 
 /*-----------courses----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
